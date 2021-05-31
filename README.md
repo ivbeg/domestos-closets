@@ -1,2 +1,35 @@
 # domestos-closets
 Data from Domestos contest of school toilets to repair
+
+Этот репозиторий содержит код и данные Школьной программы Domestos 2021 https://www.promonado.ru/domestos-schools/
+на 31 мая 2021 года и включает только те данные что доступны через API на сайте программы.
+
+
+
+Данные выкачаны программой APIBackuper (https://github.com/ruarxive/apibackuper) версии 1.0.5 созданной специально 
+для архивации данных передаваемых через API. Для работы команды нужно запускать её в папке с файлом .cfg.
+Параметры выгрузки указаны в apibackuper.cfg файле, утилита берет оттуда настройки и последовательно выкачивает данные
+и складывает их в файл storage/storage.zip. Другими командами выкачиваются файлы (изображения) и экспортируются данные
+
+
+Для выгрузки данных
+
+	apibackuper run full
+
+Для выгрузки всех изображений
+
+	apibackuper getfiles
+
+Для получения набора данных в формате построчного JSON файла (JSON lines)
+
+	apibackuper export jsonl data.jsonl
+
+Для преобразования JSON файла в CSV автоматически нужна утилита undatum  (https://github.com/datacoon/undatum)
+    
+    undatum convert data.jsonl data.csv
+
+
+Все данные собраны, преобразованы и сложены в репозитории.
+
+# Лицензия 
+MIT License
